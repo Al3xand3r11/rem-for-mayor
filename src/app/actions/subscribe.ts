@@ -3,11 +3,11 @@
 import { supabase } from "@/lib/supabase";
 
 export async function subscribe(formData: FormData) {
-  const name = (formData.get("name") as string)?.trim();
+  const name = (formData.get("name") as string)?.trim() || "";
   const email = (formData.get("email") as string)?.trim().toLowerCase();
 
-  if (!name || !email) {
-    return { success: false, message: "Name and email are required." };
+  if (!email) {
+    return { success: false, message: "Email is required." };
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -23,9 +23,12 @@ export async function subscribe(formData: FormData) {
     };
   }
 
+  const row: Record<string, string> = { email };
+  if (name) row.name = name;
+
   const { error } = await supabase
     .from("subscribers")
-    .upsert({ name, email }, { onConflict: "email" });
+    .upsert(row, { onConflict: "email" });
 
   if (error) {
     console.error("Supabase insert error:", error);

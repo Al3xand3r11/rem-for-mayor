@@ -68,13 +68,6 @@ export default function SignupForm() {
             className="flex flex-col sm:flex-row gap-3"
           >
             <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              required
-              className="flex-1 px-5 py-3.5 rounded-full border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition"
-            />
-            <input
               type="email"
               name="email"
               placeholder="Your email"
