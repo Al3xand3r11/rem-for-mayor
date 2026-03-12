@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CANDIDATE_NAME } from "@/lib/mock-data";
 
@@ -15,9 +15,22 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
           {CANDIDATE_NAME}
@@ -30,10 +43,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-accent ${
+              className={`text-sm font-semibold transition-colors hover:text-accent ${
                 pathname === link.href
                   ? "text-accent"
-                  : "text-muted-foreground"
+                  : "text-foreground/70"
               }`}
             >
               {link.label}
@@ -73,7 +86,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden bg-white border-b border-border"
+            className="md:hidden overflow-hidden bg-background/90 backdrop-blur-md"
           >
             <div className="flex flex-col gap-4 px-6 py-4">
               {links.map((link) => (
@@ -81,10 +94,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-accent ${
+                  className={`text-sm font-semibold transition-colors hover:text-accent ${
                     pathname === link.href
                       ? "text-accent"
-                      : "text-muted-foreground"
+                      : "text-foreground/70"
                   }`}
                 >
                   {link.label}

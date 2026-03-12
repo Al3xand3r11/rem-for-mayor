@@ -26,8 +26,10 @@ export default function SignupForm() {
   }
 
   return (
-    <section id="signup" className="py-24 bg-muted">
-      <div className="mx-auto max-w-2xl px-6 text-center">
+    <section id="signup" className="relative z-30 py-24 bg-[#c8d6d1] overflow-hidden">
+      <div className="absolute bottom-0 left-0 h-full w-3/4 bg-linear-to-tr from-[#0D7377]/8 via-[#0D7377]/3 via-35% to-transparent pointer-events-none" />
+
+      <div className="relative mx-auto max-w-2xl px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,14 +72,14 @@ export default function SignupForm() {
               name="name"
               placeholder="Your name"
               required
-              className="flex-1 px-5 py-3.5 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition"
+              className="flex-1 px-5 py-3.5 rounded-full border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition"
             />
             <input
               type="email"
               name="email"
               placeholder="Your email"
               required
-              className="flex-1 px-5 py-3.5 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition"
+              className="flex-1 px-5 py-3.5 rounded-full border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition"
             />
             <button
               type="submit"

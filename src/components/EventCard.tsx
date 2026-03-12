@@ -27,7 +27,7 @@ export default function EventCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+      className="bg-[#d5e2dd] rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="p-6">
         <div className="flex items-start gap-4">

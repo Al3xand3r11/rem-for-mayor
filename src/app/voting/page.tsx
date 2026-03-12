@@ -13,8 +13,11 @@ const VotingMap = dynamic(() => import("@/components/VotingMap"), {
 
 export default function VotingPage() {
   return (
-    <section className="pt-28 pb-24 min-h-screen">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="relative pt-28 pb-24 min-h-screen bg-[#c8d6d1] overflow-hidden">
+      <div className="absolute top-0 right-0 h-2/3 w-2/3 bg-linear-to-bl from-[#0D7377]/8 via-[#0D7377]/3 via-30% to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-1/2 w-1/2 bg-linear-to-tr from-[#0D7377]/6 via-[#0D7377]/2 via-35% to-transparent pointer-events-none" />
+
+      <div className="relative mx-auto max-w-5xl px-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
