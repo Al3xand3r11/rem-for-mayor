@@ -6,40 +6,54 @@ import PolicyItem from "./PolicyItem";
 
 export default function PolicySection() {
   return (
-    <section className="relative z-30 py-24 bg-[#c8d6d1] overflow-hidden">
-      <div className="absolute top-0 right-0 h-full w-2/3 bg-linear-to-bl from-[#0D7377]/10 via-[#0D7377]/4 via-30% to-transparent pointer-events-none" />
-
+    <section id="platform" className="relative z-30 py-24 bg-accent overflow-hidden">
       <div className="relative mx-auto max-w-3xl px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
-        >
-          The Platform
-        </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-muted-foreground mb-12 text-lg text-center"
+          transition={{ duration: 0.6 }}
+          className="text-sm font-bold tracking-[0.2em] uppercase text-white/70 text-center mb-4"
         >
-          Real solutions for the issues that matter most to our community.
+          The Platform
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="border-t border-border"
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-black text-white text-center leading-tight mb-16"
         >
-          {policies.map((policy) => (
-            <PolicyItem key={policy.title} policy={policy} />
+          Respecting Bowie&apos;s legacy
+          <br />
+          while preparing its future.
+        </motion.h2>
+
+        <div className="space-y-8">
+          {policies.map((category, catIndex) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+              className="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
+            >
+              <h3 className="text-xl md:text-2xl font-black text-accent px-6 pt-6 pb-2">
+                {category.title}
+              </h3>
+              <div>
+                {category.items.map((item, i) => (
+                  <PolicyItem
+                    key={i}
+                    item={item}
+                    isLast={i === category.items.length - 1}
+                  />
+                ))}
+              </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

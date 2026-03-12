@@ -9,9 +9,9 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} {CANDIDATE_NAME} for Mayor. All
           rights reserved.
         </p>
-        <p className="text-sm text-muted-foreground">
-          Paid for by {CANDIDATE_NAME} for Mayor Campaign
-        </p>
+        <a className="text-sm text-muted-foreground">
+          @brandon
+        </a>
       </div>
     </footer>
   );
