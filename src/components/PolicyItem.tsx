@@ -31,7 +31,7 @@ export default function PolicyItem({
           className={`
             shrink-0 flex items-center justify-center w-8 h-8 rounded-full border-2 
             text-lg font-medium transition-colors duration-200
-            ${open ? "border-white text-white" : "border-accent text-accent group-hover:border-white group-hover:text-white"}
+            ${open ? "border-white text-white" : "border-tertiary text-tertiary group-hover:border-white group-hover:text-white"}
           `}
         >
           <motion.span

@@ -27,7 +27,7 @@ export default function SignupForm() {
 
   return (
     <section id="signup" className="relative z-30 py-24 bg-[#c8d6d1] overflow-hidden">
-      <div className="absolute bottom-0 left-0 h-full w-3/4 bg-linear-to-tr from-[#0D7377]/8 via-[#0D7377]/3 via-35% to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 h-full w-3/4 bg-linear-to-tr from-[#06327e]/8 via-[#06327e]/3 via-35% to-transparent pointer-events-none" />
 
       <div className="relative mx-auto max-w-2xl px-6 text-center">
         <motion.h2

@@ -14,10 +14,13 @@ export interface EventData {
   description: string;
   date: string;
   time: string;
-  location: string;
-  address: string;
-  lat: number;
-  lng: number;
+  type?: "in-person" | "tv";
+  location?: string;
+  address?: string;
+  lat?: number;
+  lng?: number;
+  channels?: { provider: string; channel: number }[];
+  airTimes?: string[];
 }
 
 export interface District {
@@ -121,52 +124,44 @@ export const policies: PolicyCategory[] = [
 export const events: EventData[] = [
   {
     id: "1",
-    title: "Town Hall: Housing Solutions",
+    title: "TV Interview",
     description:
-      "Join Rem for an open conversation about affordable housing and what we can do to keep families in their homes.",
-    date: "2026-03-14",
-    time: "6:00 PM",
-    location: "Downtown Community Center",
-    address: "100 Main Street",
-    lat: 40.7128,
-    lng: -74.006,
+      "Catch Rem's television interview airing on local cable channels. Tune in to hear about the vision for Bowie's future.",
+    date: "2026-03-13",
+    time: "5:30 PM, 8:30 PM & 11:30 PM",
+    type: "tv",
+    channels: [
+      { provider: "Comcast", channel: 76 },
+      { provider: "Verizon", channel: 42 },
+    ],
+    airTimes: ["5:30 PM", "8:30 PM", "11:30 PM"],
   },
   {
     id: "2",
-    title: "Rally in the Park",
+    title: "Bowie City Council Meeting",
     description:
-      "A family-friendly rally with live music, food trucks, and a chance to hear Rem's vision for the city.",
-    date: "2026-03-18",
-    time: "4:00 PM",
-    location: "Riverside Park Pavilion",
-    address: "250 Riverside Drive",
-    lat: 40.8015,
-    lng: -73.9712,
+      "Join Rem at the Bowie City Council meeting to engage with local leadership and hear plans for the city's future.",
+    date: "2026-03-16",
+    time: "8:00 PM",
+    type: "in-person",
+    location: "Bowie City Hall",
+    address: "15901 Fred Robinson Way, Bowie, MD 20716",
+    lat: 38.9427,
+    lng: -76.7302,
   },
   {
     id: "3",
-    title: "Education Forum",
+    title: "Bowie City Forum",
     description:
-      "Teachers, parents, and students are invited to discuss the future of our public schools.",
-    date: "2026-03-21",
-    time: "7:30 PM",
-    location: "Lincoln High School Auditorium",
-    address: "450 Lincoln Avenue",
-    lat: 40.7484,
-    lng: -73.9857,
-  },
-  {
-    id: "4",
-    title: "Small Business Roundtable",
-    description:
-      "Local entrepreneurs share their challenges and ideas. Rem will outline plans to support small businesses.",
-    date: "2026-03-25",
-    time: "5:30 PM",
-    location: "Eastbrook Business Hub",
-    address: "78 Commerce Street",
-    lat: 40.7282,
-    lng: -73.7949,
-  },
+      "Come out and make your voice heard at the Bowie City Forum. An open discussion on the issues that matter most to our community.",
+    date: "2026-03-26",
+    time: "7:00 PM – 8:30 PM",
+    type: "in-person",
+    location: "St. Matthews United Methodist Church",
+    address: "14900 Annapolis Road (Rt. 450, next to the high school tennis courts)",
+    lat: 38.9573,
+    lng: -76.7197,
+  }
 ];
 
 export const districts: District[] = [
@@ -198,7 +193,7 @@ export const districts: District[] = [
     pollingPlace: "Kenhill Center",
     pollingAddress: "2614 Kenhill Drive",
     pollingCoords: [38.9567, -76.7277],
-    color: "#0D7377",
+    color: "#2b70e4",
     bounds: [
       [38.9725, -76.7340],
       [38.9710, -76.6920],
@@ -232,7 +227,7 @@ export const districts: District[] = [
     pollingPlace: "Kenhill Center",
     pollingAddress: "2614 Kenhill Drive",
     pollingCoords: [38.9567, -76.7277],
-    color: "#2E86AB",
+    color: "#2b70e4",
     bounds: [
       [38.9725, -76.7840],
       [38.9725, -76.7340],

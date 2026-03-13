@@ -3,9 +3,10 @@
 :root {
   --background: #c8d6d1;
   --foreground: #111111;
-  --accent: #0D7377;
-  --accent-light: #11999e;
-  --accent-dark: #0a5c5f;
+  --accent: #2b70e4;
+  --accent-light: #2b70e4;
+  --accent-dark: #06327e;
+  --tertiary: #ffd034;
   --muted: #b8cac4;
   --muted-foreground: #3d5751;
   --border: #a8bdb6;
@@ -17,6 +18,7 @@
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --color-accent-dark: var(--accent-dark);
+  --color-tertiary: var(--tertiary);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);

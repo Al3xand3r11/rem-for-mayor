@@ -27,14 +27,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          ? "bg-accent/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-        <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
+        <Link href="/" className="text-xl font-bold tracking-tight text-white">
           {CANDIDATE_NAME}
-          <span className="text-accent"> for Mayor</span>
+          <span className="text-tertiary"> for Mayor</span>
         </Link>
 
         {/* Desktop links */}
@@ -43,10 +43,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-semibold transition-colors hover:text-accent ${
+              className={`text-sm font-semibold transition-colors hover:text-tertiary ${
                 pathname === link.href
-                  ? "text-accent"
-                  : "text-foreground/70"
+                  ? "text-tertiary"
+                  : "text-white/80"
               }`}
             >
               {link.label}
@@ -61,17 +61,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-transform ${
+            className={`block h-0.5 w-6 bg-white transition-transform ${
               mobileOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-opacity ${
+            className={`block h-0.5 w-6 bg-white transition-opacity ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-foreground transition-transform ${
+            className={`block h-0.5 w-6 bg-white transition-transform ${
               mobileOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
@@ -86,7 +86,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden bg-background/90 backdrop-blur-md"
+            className="md:hidden overflow-hidden bg-accent/95 backdrop-blur-md"
           >
             <div className="flex flex-col gap-4 px-6 py-4">
               {links.map((link) => (
@@ -94,10 +94,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm font-semibold transition-colors hover:text-accent ${
+                  className={`text-sm font-semibold transition-colors hover:text-tertiary ${
                     pathname === link.href
-                      ? "text-accent"
-                      : "text-foreground/70"
+                      ? "text-tertiary"
+                      : "text-white/80"
                   }`}
                 >
                   {link.label}

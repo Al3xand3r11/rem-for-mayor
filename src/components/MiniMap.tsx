@@ -25,7 +25,7 @@ export default function MiniMap({ lat, lng }: { lat: number; lng: number }) {
     );
 
     const icon = L.divIcon({
-      html: `<div style="width:12px;height:12px;background:#0D7377;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3)"></div>`,
+      html: `<div style="width:12px;height:12px;background:#2b70e4;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3)"></div>`,
       iconSize: [12, 12],
       className: "",
     });

@@ -46,7 +46,7 @@ export default function PollingTable() {
     >
       <div className="relative mb-6">
         <svg
-          className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none"
+          className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40 pointer-events-none"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -62,12 +62,12 @@ export default function PollingTable() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search your neighborhood..."
-          className="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-white/70 backdrop-blur text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#0D7377]/30 focus:border-[#0D7377] transition-all"
+          className="w-full pl-10 pr-4 py-3 rounded-xl border border-white/15 bg-white/10 backdrop-blur text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-tertiary/30 focus:border-tertiary transition-all"
         />
       </div>
 
       {grouped.length === 0 && (
-        <p className="text-muted-foreground text-center py-8">
+        <p className="text-white/50 text-center py-8">
           No neighborhoods found matching &ldquo;{query}&rdquo;
         </p>
       )}
@@ -81,10 +81,10 @@ export default function PollingTable() {
                 className="h-3.5 w-3.5 rounded-full shrink-0"
                 style={{ backgroundColor: district.color }}
               />
-              <h3 className="text-lg font-bold text-foreground">
+              <h3 className="text-lg font-bold text-white">
                 District {districtId}
               </h3>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-white/50">
                 — {district.pollingPlace}, {district.pollingAddress}
               </span>
             </div>
@@ -92,14 +92,14 @@ export default function PollingTable() {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b-2 border-foreground/10">
-                    <th className="py-3 pr-6 text-xs font-semibold text-foreground uppercase tracking-wide">
+                  <tr className="border-b-2 border-white/15">
+                    <th className="py-3 pr-6 text-xs font-semibold text-tertiary uppercase tracking-wide">
                       Neighborhood
                     </th>
-                    <th className="py-3 pr-6 text-xs font-semibold text-foreground uppercase tracking-wide hidden sm:table-cell">
+                    <th className="py-3 pr-6 text-xs font-semibold text-tertiary uppercase tracking-wide hidden sm:table-cell">
                       Polling Location
                     </th>
-                    <th className="py-3 text-xs font-semibold text-foreground uppercase tracking-wide hidden md:table-cell">
+                    <th className="py-3 text-xs font-semibold text-tertiary uppercase tracking-wide hidden md:table-cell">
                       Address
                     </th>
                   </tr>
@@ -112,15 +112,15 @@ export default function PollingTable() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.02 }}
-                      className="border-b border-border hover:bg-accent/5 transition-colors"
+                      className="border-b border-white/10 hover:bg-white/5 transition-colors"
                     >
-                      <td className="py-3 pr-6 font-medium text-foreground">
+                      <td className="py-3 pr-6 font-medium text-white">
                         {row.neighborhood}
                       </td>
-                      <td className="py-3 pr-6 text-muted-foreground hidden sm:table-cell">
+                      <td className="py-3 pr-6 text-white/60 hidden sm:table-cell">
                         {row.pollingPlace}
                       </td>
-                      <td className="py-3 text-muted-foreground hidden md:table-cell">
+                      <td className="py-3 text-white/60 hidden md:table-cell">
                         {row.pollingAddress}
                       </td>
                     </motion.tr>

@@ -48,7 +48,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#c8d6d1] overflow-hidden">
+    <footer className="relative bg-accent-dark overflow-hidden">
       <div
         ref={containerRef}
         className="absolute inset-0 hidden md:flex items-start justify-end overflow-hidden pointer-events-none"
@@ -59,7 +59,7 @@ export default function Footer() {
             transform: `scale(${artScale})`,
             transformOrigin: "top right",
           }}
-          className="text-[5px] lg:text-[6px] xl:text-[7px] leading-[1.1] text-accent/40 font-mono select-none whitespace-pre mt-8 mr-6"
+          className="text-[5px] lg:text-[6px] xl:text-[7px] leading-[1.1] text-white/15 font-mono select-none whitespace-pre mt-8 mr-6"
           aria-hidden="true"
         >
           {ASCII_ART}
@@ -68,15 +68,15 @@ export default function Footer() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="max-w-lg">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
             {CANDIDATE_NAME}
             <br />
             for Mayor
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-foreground/80 font-medium max-w-md">
+          <p className="mt-4 text-lg md:text-xl text-white/80 font-medium max-w-md">
             {SLOGAN}
           </p>
-          <p className="mt-6 text-sm text-muted-foreground max-w-sm">
+          <p className="mt-6 text-sm text-white/60 max-w-sm">
             {CAMPAIGN_TAGLINE}
           </p>
 
@@ -92,7 +92,7 @@ export default function Footer() {
                   name="email"
                   placeholder="YOUR EMAIL"
                   required
-                  className="flex-1 px-4 py-3 border border-foreground/30 bg-transparent text-foreground placeholder:text-foreground/40 placeholder:text-sm placeholder:tracking-widest focus:outline-none focus:border-foreground/60 transition font-mono"
+                  className="flex-1 px-4 py-3 border border-white/30 bg-transparent text-white placeholder:text-white/40 placeholder:text-sm placeholder:tracking-widest focus:outline-none focus:border-white/60 transition font-mono"
                 />
                 <button
                   type="submit"
@@ -110,14 +110,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-foreground/10">
+      <div className="relative border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} {CANDIDATE_NAME} for Mayor. All
             rights reserved.
           </p>
-          <a href="https://www.alexandernance.com" className="text-xs text-muted-foreground">
-            <span className="text-xs text-muted-foreground">@brandon</span>
+          <a href="https://www.alexandernance.com" className="text-xs text-white/50 hover:text-white/80 transition-colors">
+            <span>@brandon</span>
           </a>
         </div>
       </div>

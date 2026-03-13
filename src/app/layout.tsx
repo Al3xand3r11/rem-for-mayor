@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description:
     "Building a future where every neighborhood thrives, every voice is heard, and every family has the opportunity to succeed.",
   metadataBase: new URL("https://rem-for-mayor.vercel.app"),
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Rem for Mayor — A New Vision for Our City",
     description:
