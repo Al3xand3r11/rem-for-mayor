@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CandidateJsonLd, WebsiteJsonLd } from "@/components/JsonLd";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -11,28 +12,39 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rem for Mayor — A New Vision for Our City",
-    template: "%s | Rem for Mayor",
+    default:
+      "Rem Tennessee for Mayor of Bowie, MD — Bowie Forward",
+    template: "%s | Rem Tennessee for Mayor of Bowie",
   },
   description:
-    "Building a future where every neighborhood thrives, every voice is heard, and every family has the opportunity to succeed.",
-  metadataBase: new URL("https://rem-for-mayor.vercel.app"),
+    "Remington Tennessee is running for Mayor of Bowie, Maryland. A platform focused on youth opportunity, community engagement, and growing local business in Bowie, MD.",
+  metadataBase: new URL("https://bowieforward.com"),
+  keywords: [
+    "Bowie mayor",
+    "Bowie MD mayor",
+    "Rem Tennessee",
+    "Remington Tennessee",
+    "Bowie Maryland election",
+    "Bowie city election",
+    "Bowie Forward",
+    "mayor of Bowie",
+  ],
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Rem for Mayor — A New Vision for Our City",
+    title: "Rem Tennessee for Mayor of Bowie, MD — Bowie Forward",
     description:
-      "Building a future where every neighborhood thrives, every voice is heard, and every family has the opportunity to succeed.",
-    siteName: "Rem for Mayor",
+      "Remington Tennessee is running for Mayor of Bowie, Maryland. A platform focused on youth opportunity, community engagement, and growing local business in Bowie, MD.",
+    siteName: "Bowie Forward — Rem Tennessee for Mayor",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rem for Mayor — A New Vision for Our City",
+    title: "Rem Tennessee for Mayor of Bowie, MD — Bowie Forward",
     description:
-      "Building a future where every neighborhood thrives, every voice is heard, and every family has the opportunity to succeed.",
+      "Remington Tennessee is running for Mayor of Bowie, Maryland. A platform focused on youth opportunity, community engagement, and growing local business in Bowie, MD.",
   },
 };
 
@@ -44,6 +56,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} antialiased font-sans`}>
+        <CandidateJsonLd />
+        <WebsiteJsonLd />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
