@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { CANDIDATE_NAME } from "@/lib/mock-data";
 
 export default function Hero() {
@@ -66,6 +67,21 @@ export default function Hero() {
               Stay Up to Date
             </a>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            className="mt-4 text-sm md:text-base text-white font-medium"
+          >
+            Watch Remington&apos;s interview with PGCTV{" "}
+            <Link
+              href="/events"
+              className="text-tertiary underline hover:text-tertiary/80 transition-colors"
+            >
+              here
+            </Link>
+          </motion.p>
         </div>
 
         {/* Right — candidate portrait, extends below hero */}
